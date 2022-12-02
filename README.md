@@ -1,4 +1,4 @@
-# okkernel-program
+okkernel-program
 
 ## 题目说明
 
@@ -63,10 +63,6 @@ $ make okk USING_CMODEL=1
 ```
 
 ### 运行
-
-```
-$ export LD_LIBRARY_PATH=/path/to/lib/
-```
 
 ```
 $ ./build/cmodel/relu  
