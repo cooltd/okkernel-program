@@ -17,14 +17,11 @@ typedef struct {
 void relu_contest(const void *args) {
     okk_initialize();
     param_t *param = (param_t *)args;
-    float C = 0;
-    dim4 shape = {.n=param->N, .c=param->C, .h=param->H, .w=param->W};
-    local_addr_t tensor1_addr = 0;
-    local_addr_t tensor2_addr = shape.n * shape.c * shape.h * shape.w *sizeof(float);
-    okk_gdma_32bit_cpy_S2L(tensor1_addr, param->input_addr,  &shape, NULL, NULL);
-    okk_bdc_max_C(tensor2_addr, tensor1_addr,  C, &shape, NULL, NULL);
-    okk_gdma_32bit_cpy_L2S(param->output_addr, tensor2_addr, &shape, NULL, NULL);
     // TODO
+    (void)param;
+    OKKERNEL_LOG("Hello World\n");
+    OKKERNEL_LOG("Please program between TODO and END\n");
+    // END
     okk_poll();
 }
 OKKERNEL_FUNC_REGISTER(relu_contest);
